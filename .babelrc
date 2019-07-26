@@ -1,5 +1,18 @@
 {
   "presets": [
     "next/babel"
+  ],
+  "plugins": [
+    ["module-resolver", {
+      "root": ["./src"],
+      "alias": {
+        "ui": "./src/shared/ui",
+        "lib": "./src/shared/lib",
+        "const": "./src/shared/const",
+        "theme": "./src/shared/theme",
+        "actions": "./src/shared/lib/redux/actions",
+        "reducers": "./src/shared/lib/redux/reducers"
+      }
+    }]
   ]
 }

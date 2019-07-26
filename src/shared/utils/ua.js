@@ -1,17 +1,13 @@
 const mobile = ua =>
-    Boolean(ua.match(/Android|webOS|iPhone|iPad|iPod|BlackBerry|IEMobile|Opera Mini|Windows Phone/i))
+    Boolean(ua.match(/Android|(i|web)OS|(i|Windows)?[ ]?(Phone|Pod|Pad)|(Opera|IE)?[ ]?(Mobile|Mini)|BlackBerry|J2ME|MIDP/i))
 
 const device = ua =>
     ua.match(/Android/i) ? 'Android' :
         ua.match(/webOS/i) ? 'webOS' :
-            ua.match(/iPhone/i) ? 'iPhone' :
-                ua.match(/iPad/i) ? 'iPad' :
-                    ua.match(/iPod/i) ? 'iPod' :
-                        ua.match(/BlackBerry/i) ? 'BlackBerry' :
-                            ua.match(/IEMobile/i) ? 'IEMobile' :
-                                ua.match(/Opera Mini/i) ? 'Opera Mini' :
-                                    ua.match(/Windows Phone/i) ? 'Windows Phone' :
-                                        'other'
+            ua.match(/iPhone|iPad|iPod/i) ? 'iOS' :
+                ua.match(/Opera Mini|J2ME|MIDP/i) ? 'Mini' :
+                    ua.match(/Windows|IEMobile/i) ? 'Windows' :
+                        'other'
 
 export default ua => ({
     device: device(ua),

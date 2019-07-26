@@ -1,5 +1,9 @@
-import snack from './snack'
+import {combineReducers} from 'redux'
 
-export {
-    snack
-}
+import cover from './cover'
+import page from './page'
+
+export default combineReducers({
+    cover,
+    page
+})
